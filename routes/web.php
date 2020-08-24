@@ -11,6 +11,9 @@
 |
 */
 
+use App\Sacco;
+
 Route::get('/', function () {
-    return view('welcome');
+    $saccos = Sacco::get();
+    return view('welcome', compact('saccos'));
 });
